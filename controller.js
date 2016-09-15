@@ -6,15 +6,19 @@
 // Add event listeners on lighted moles (add class to those ones probably), need to be delegated
 // if mole clicked in time interval, score is increased
 
-APP = APP || {};
+var APP = APP || {};
 
 var ControllerModule = (function(View, Model) {
   var stub = {};
-  stub.gameloop = function(){
+
+  stub.gameLoop = function(){
     setInterval(function(){
       //generate mole location
+      
       Model.setMoleLoc();
       var moleLoc = Model.getMoleLoc();
+
+      View.clear();
       View.render(moleLoc);
       //update grid - change classes for mole locationing
       //update score if clicked <- determined in listener
@@ -23,9 +27,10 @@ var ControllerModule = (function(View, Model) {
 
   stub.init = function(){
     View.init();
+
   };
 
   return stub;
-})(APP.View);
+})(APP.ViewModule, APP.ModelModule);
 
 APP.ControllerModule = ControllerModule;

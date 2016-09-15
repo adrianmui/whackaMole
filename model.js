@@ -1,4 +1,4 @@
-APP = APP || {};
+var APP = APP || {};
 
 var ModelModule = (function() {
   var stub = {};

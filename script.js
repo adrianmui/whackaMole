@@ -1,3 +1,6 @@
 $(document).ready(function() {
-  controller.init();
+  
+  //APP.ControllerModule.init();
+  APP.ControllerModule.gameLoop();
+
 });
