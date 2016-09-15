@@ -3,8 +3,17 @@ APP = APP || {};
 var ModelModule = (function() {
   var stub = {};
 
+  var moleLocation = 0;
+
+  stub.getMoleLoc = function(){
+    return moleLocation;
+  };
+
+  stub.setMoleLoc = function(){
+    moleLocation = Math.floor(Math.random()*publicGridSize);
+  };
   //grid for whackamole
-  var publicGrid = [0,0,0,0,0,0,0,0];
+  var publicGridSize = 8;
 
   //getter
   stub.getGrid = function () { return publicGrid; };
